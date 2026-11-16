@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Data Diri</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 30px 15px;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        background-color: #ffffff;
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        padding: 25px 30px;
+        width: 100%;
+        max-width: 520px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      h1 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 15px;
+        color: #000000;
+      }
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333333;
+      }
+      input[type="text"]:focus,
+      input[type="date"]:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .checkbox-item input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 4px;
+      }
+      button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulir Data Diri</h1>
+      <form action="Backend.php" method="POST">
+        <div class="form-group">
+          <label for="nama" class="form-label">Nama Lengkap:</label>
+          <input type="text" id="nama" name="nama_lengkap" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tanggal_lahir" class="form-label">Tanggal Lahir:</label>
+          <input type="date" id="tanggal_lahir" name="tanggal_lahir" required />
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">Hobi:</span>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" name="hobi[]" value="Membaca" /> Membaca
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="hobi[]" value="Olahraga" /> Olahraga
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="hobi[]" value="Musik" /> Musik
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="hobi[]" value="Lainnya" /> Lainnya
+            </label>
+          </div>
+        </div>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </body>
+</html>
